@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybe-Red - Quejas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(-45deg, #2b7cff, #6fb1ff, #c2e0ff, #2b7cff);
+      background-size: 400% 400%;
+      animation: fondoAnimado 10s ease infinite;
+    }@keyframes fondoAnimado {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  width: 360px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  border-top: 8px solid #2b7cff;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.header h1 {
+  margin: 0;
+  color: #2b7cff;
+  font-size: 24px;
+}
+
+.header p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 10px;
+  color: #2b7cff;
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+input, textarea, select {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #2b7cff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1a5edb;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container"><div class="header">
+  <h1>Cybe-Red</h1>
+  <p>Internet en tu hogar</p>
+</div>
+
+<h2>Reporte de Internet</h2>
+
+<label>Nombre</label>
+<input type="text" id="nombre">
+
+<label>Barrio</label>
+<select id="barrio">
+  <option value="">Selecciona un barrio</option>
+  <option>La Asunción</option>
+  <option>San Pedro</option>
+  <option>El Rosario</option>
+  <option>Loma Bonita</option>
+  <option>San Nicolas</option>
+  <option>La Colonia</option>
+  <option>Las Animas</option>
+  <option>Centro</option>
+  <option>Tlalixtaquilla</option>
+  <option>Calvario</option>
+  <option>Otro</option>
+</select>
+
+<label>Teléfono</label>
+<input type="text" id="telefono">
+
+<label>Fecha</label>
+<input type="date" id="fecha">
+
+<label>Reporte</label>
+<textarea id="reporte"></textarea>
+
+<button onclick="enviarWhats()">Enviar por WhatsApp</button>
+
+  </div>  <script>
+    function enviarWhats() {
+      let nombre = document.getElementById("nombre").value;
+      let barrio = document.getElementById("barrio").value;
+      let telefono = document.getElementById("telefono").value;
+      let fecha = document.getElementById("fecha").value;
+      let reporte = document.getElementById("reporte").value;
+
+      let numero = "7571226019"; // PON EL NÚMERO DEL JEFE
+
+      let mensaje = `📡 *Reporte de Queja*%0A%0A👤 Nombre: ${nombre}%0A🏠 Barrio: ${barrio}%0A📞 Teléfono: ${telefono}%0A📅 Fecha: ${fecha}%0A📝 Reporte: ${reporte}`;
+
+      let url = `https://wa.me/${numero}?text=${mensaje}`;
+      window.open(url, "_blank");
+    }
+  </script></body>
+</html>
