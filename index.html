@@ -136,22 +136,25 @@ button:hover {
 
 <button onclick="enviarWhats()">Enviar por WhatsApp</button>
 
-  </div>  <script>
-    function enviarWhats() {
-      let nombre = document.getElementById("nombre").value;
-      let barrio = document.getElementById("barrio").value;
-      let direccion = document.getElementById("direccion").value;
-      let telefono = document.getElementById("telefono").value;
-      let fecha = document.getElementById("fecha").value;
-      let reporte = document.getElementById("reporte").value;
+  </div>  
+   <script>
+  function enviarWhats() {
+    let nombre = document.getElementById("nombre").value;
+    let barrio = document.getElementById("barrio").value;
+    let direccion = document.getElementById("direccion").value;
+    let telefono = document.getElementById("telefono").value;
+    let fecha = document.getElementById("fecha").value;
+    let reporte = document.getElementById("reporte").value;
 
-      let numero = "7571226019"; // PON EL NÚMERO DEL JEFE
+    let numero = "7571226019"; // PON EL NÚMERO DEL JEFE
 
-      let ubicacion = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(direccion + ' ' + barrio)}`;
-      let mensaje = `📡 *Reporte de Queja*%0A%0A👤 Nombre: ${nombre}%0A🏠 Barrio: ${barrio}%0A{barrio}%0A📍 Dirección: ${direccion}%0A📞 Teléfono: ${telefono}%0A📅 Fecha: ${fecha}%0A📝 Reporte: ${reporte} 📌 Ubicación: ${ubicacion} ';
+    let ubicacion = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(direccion + ' ' + barrio)}`;
 
-      let url = `https://wa.me/${numero}?text=${mensaje}`;
-      window.open(url, "_blank");
-    }
-  </script></body>
+    let mensaje = `📡 *Reporte de Queja*%0A%0A👤 Nombre: ${nombre}%0A🏠 Barrio: ${barrio}%0A📍 Dirección: ${direccion}%0A📞 Teléfono: ${telefono}%0A📅 Fecha: ${fecha}%0A📝 Reporte: ${reporte}%0A📌 Ubicación: ${ubicacion}`;
+
+    let url = `https://wa.me/${numero}?text=${mensaje}`;
+    window.open(url, "_blank");
+  }
+</script>
+    </body>
 </html>
