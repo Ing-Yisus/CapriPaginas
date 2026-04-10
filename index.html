@@ -123,6 +123,7 @@ button:hover {
 </select>
 
 <label>Dirección</label>
+<input type="text" id="direccion">
 
 <label>Teléfono</label>
 <input type="text" id="telefono">
@@ -139,13 +140,14 @@ button:hover {
     function enviarWhats() {
       let nombre = document.getElementById("nombre").value;
       let barrio = document.getElementById("barrio").value;
+      let direccion = document.getElementById("direccion").value;
       let telefono = document.getElementById("telefono").value;
       let fecha = document.getElementById("fecha").value;
       let reporte = document.getElementById("reporte").value;
 
       let numero = "7571226019"; // PON EL NÚMERO DEL JEFE
 
-      let mensaje = `📡 *Reporte de Queja*%0A%0A👤 Nombre: ${nombre}%0A🏠 Barrio: ${barrio}%0A📞 Teléfono: ${telefono}%0A📅 Fecha: ${fecha}%0A📝 Reporte: ${reporte}`;
+      let mensaje = `📡 *Reporte de Queja*%0A%0A👤 Nombre: ${nombre}%0A🏠 Barrio: ${barrio}%0A{barrio}%0A📍 Dirección: ${direccion}%0A📞 Teléfono: ${telefono}%0A📅 Fecha: ${fecha}%0A📝 Reporte: ${reporte}`;
 
       let url = `https://wa.me/${numero}?text=${mensaje}`;
       window.open(url, "_blank");
