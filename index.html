@@ -147,7 +147,8 @@ button:hover {
 
       let numero = "7571226019"; // PON EL NÚMERO DEL JEFE
 
-      let mensaje = `📡 *Reporte de Queja*%0A%0A👤 Nombre: ${nombre}%0A🏠 Barrio: ${barrio}%0A{barrio}%0A📍 Dirección: ${direccion}%0A📞 Teléfono: ${telefono}%0A📅 Fecha: ${fecha}%0A📝 Reporte: ${reporte}`;
+      let ubicacion = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(direccion + ' ' + barrio)}`;
+      let mensaje = `📡 *Reporte de Queja*%0A%0A👤 Nombre: ${nombre}%0A🏠 Barrio: ${barrio}%0A{barrio}%0A📍 Dirección: ${direccion}%0A📞 Teléfono: ${telefono}%0A📅 Fecha: ${fecha}%0A📝 Reporte: ${reporte} 📌 Ubicación: ${ubicacion} ';
 
       let url = `https://wa.me/${numero}?text=${mensaje}`;
       window.open(url, "_blank");
